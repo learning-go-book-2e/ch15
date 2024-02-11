@@ -15,4 +15,3 @@ func TestCountCharacters(t *testing.T) {
 		t.Error("Expected an error")
 	}
 }
-

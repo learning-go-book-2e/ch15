@@ -8,4 +8,3 @@ func TestGetCounter(t *testing.T) {
 		t.Error("unexpected counter:", counter)
 	}
 }
-

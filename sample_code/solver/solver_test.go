@@ -26,10 +26,11 @@ func TestProcessor_ProcessExpressions(t *testing.T) {
 	in := strings.NewReader(`2 + 2 * 10
 ( 2 + 2 ) * 10
 ( 2 + 2 * 10`)
-	data := []float64{22, 40, 0, 0}
-	for _, d := range data {
+	data := []float64{22, 40, 0}
+	hasErr := []bool{false, false, true}
+	for i, d := range data {
 		result, err := p.ProcessExpression(context.Background(), in)
-		if err != nil {
+		if err != nil && !hasErr[i] {
 			t.Error(err)
 		}
 		if result != d {

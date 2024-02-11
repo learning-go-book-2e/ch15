@@ -23,7 +23,7 @@ func (l Logic) GetPetNames(userId string) ([]string, error) {
 	if err != nil {
 		return nil, err
 	}
-	out := make([]string, 0, len(pets))
+	out := make([]string, len(pets))
 	for _, p := range pets {
 		out = append(out, p.Name)
 	}
